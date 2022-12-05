@@ -1,0 +1,24 @@
+1. TEHTY
+Sovellus käyttää lähteenään Iltalehden uutisia tästä lähteestä https://xamkbit.azurewebsites.net/uutiset. 
+Tiedot haetaan palvelimelta sovelluksen käynnistyksen yhteydessä.
+
+2. TEHTY
+Sovelluksen aloitusnäkymässä näytetään kaikista uutisista ainoastaan otsikko ja päivämäärä. 
+Listaukseen sovelletaan MUI:n List-komponentteja. 
+
+3. TEHTY
+Aloitusnäkymässä on myös painike/ikoni uutislistauksen päivittämiseen. 
+Tätä painamalla kaikki uutiset haetaan palvelimelta uudestaan.
+
+4. TEHTY,  muttei toimi oikein...
+Listauksen jokaisesta uutisesta voidaan avata yksittäinen uutinen omaan näkymään. 
+Siirtyminen käynnistyy listaelementtiä klikkaamalla. 
+
+5. VAATIVA (mennee lopulta peruskaurana, kunhan saan parametroidut reitit toimimaan)
+Yksittäisen uutisen näkymässä uutisesta toistetaan otsikko ja päivämäärä. 
+Lisäksi näytetään kuva, sisältöteksti kuvan alla sekä linkki kyseiseen uutiseen Iltalehden palvelussa. 
+
+6. TEHTY
+Yksittäisen uutisen näkymästä on mahdollista palata listaukseen omalla painikkeellaan/ikonilla.
+
+(Voit laatia käyttöliittymän visuaaliset ratkaisut vapaasti, kuitenkin perustuen MUI-komponentteihin.)
