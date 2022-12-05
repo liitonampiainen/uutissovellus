@@ -10,11 +10,11 @@ Listaukseen sovelletaan MUI:n List-komponentteja.
 Aloitusnäkymässä on myös painike/ikoni uutislistauksen päivittämiseen. 
 Tätä painamalla kaikki uutiset haetaan palvelimelta uudestaan.
 
-4. TEHTY,  muttei toimi oikein...
+4. TEHTY
 Listauksen jokaisesta uutisesta voidaan avata yksittäinen uutinen omaan näkymään. 
 Siirtyminen käynnistyy listaelementtiä klikkaamalla. 
 
-5. VAATIVA (mennee lopulta peruskaurana, kunhan saan parametroidut reitit toimimaan)
+5. EI TOIMI
 Yksittäisen uutisen näkymässä uutisesta toistetaan otsikko ja päivämäärä. 
 Lisäksi näytetään kuva, sisältöteksti kuvan alla sekä linkki kyseiseen uutiseen Iltalehden palvelussa. 
 

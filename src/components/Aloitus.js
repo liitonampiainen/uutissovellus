@@ -1,52 +1,41 @@
-import React, { useState } from 'react';
-import Button from '@mui/material/Button';
-import { List, ListItem, ListItemText } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { Button, List, ListItem, ListItemText } from '@mui/material';
 import { Link } from 'react-router-dom';
+// import uuid from 'react-uuid';
 
 function Aloitus() {
-    const [users, setUsers] = useState([]);
+  const [uutiset, setUutiset] = useState([]);
 
-    // VÄLIAIKAISESTI POIS KÄYTÖSTÄ
-    // useEffect(() => {
-    //   fetch('https://reqres.in/api/users')
-    //   .then(response => response.json())
-    //   .then(resData => setUsers(resData.data))
-    // }, []);
+  useEffect(() => {
+    fetch('https://xamkbit.azurewebsites.net/uutiset')
+    .then(response => response.json())
+    .then(resData => setUutiset(resData))
+  }, []);
 
-    const fetchItems = () => {
-      fetch('https://reqres.in/api/users')
-      .then(response => response.json())
-      .then(resData => setUsers(resData.data))
-      .catch(err => console.error(err))
-    }
-  
-    return (
-      <div className="App">
-        <h1>Kaikki uutiset</h1>
-        <Button variant="outlined" color="primary" onClick={fetchItems}>
-          Päivitä uutiset
-        </Button>
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}
-        >
-        <List dense={true}>
-          { users.map( (user, index) =>{
-            return (
+  const fetchItems = () => {
+    fetch('https://xamkbit.azurewebsites.net/uutiset')
+    .then(response => response.json())
+    .then(resData => setUutiset(resData))
+    .catch(err => console.error(err))
+  }
+
+  return (
+    <>
+      <Button variant="outlined" color="primary" onClick={fetchItems}>
+        Päivitä uutiset
+      </Button>
+      <List dense={true}>
+        { uutiset.map( (uutinen, index) => {
+          return (
+            <ListItem key={index} sx={{ m: 0 }}>
               <Link to={`/Uutinen/${index}`}>
-                <ListItem key={index}>
-                  <ListItemText primary={user.first_name}  sx={{ mr: 2 }}/>
-                  <ListItemText primary={user.email} />
-                </ListItem>
+                <ListItemText primary={uutinen.otsikko} secondary={uutinen.pvm}  />
               </Link>
-            );
-          })}
-        </List>
-        </div>
-       </div>
-    );}
+            </ListItem>
+          );
+        })}
+      </List>
+    </>
+  );}
 
 export default Aloitus;
