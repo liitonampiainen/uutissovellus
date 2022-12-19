@@ -14,21 +14,11 @@ function Uutinen() {
 
   return (
     <>
-    <Typography variant='h4'>Tämän uutisen useParams-indeksi ennen mäppäystä on {indeksi}</Typography>
-    {uutiset.slice(indeksi, (indeksi + 1)).map((uutinen, index) => {
-        return (
-          <div key={index}>
-            <Typography>Tämän uutisen useParams-indeksi mäppäyksen jälkeen on { indeksi }</Typography>
-            <Typography>Tämän uutisen .map-indeksi on { index }</Typography>
-            <Typography variant='h4'>{uutinen.otsikko}</Typography>
-            <Typography>{uutinen.pvm}</Typography>
-            <Typography><img alt="uutiskuva" src={uutinen.kuva} width="400px"></img></Typography>
-            <Typography variant='body1' gutterBottom={true}>{uutinen.sisalto}</Typography>
-            <Typography variant='button'><a href={uutinen.linkki}>Linkki uutiseen Iltalehden sivuilla</a></Typography>
-          </div>
-        )
-      }
-    )}
+    <Typography variant='h4'>{ uutiset[indeksi]?.otsikko }</Typography>
+    <Typography>{ uutiset[indeksi]?.pvm }</Typography>
+    <Typography><img alt="uutiskuva" src={ uutiset[indeksi]?.kuva } width="400px"></img></Typography>
+    <Typography variant='body1' gutterBottom={true}>{ uutiset[indeksi]?.sisalto }</Typography>
+    <Typography variant='button'><a href={ uutiset[indeksi]?.linkki }>Linkki uutiseen Iltalehden sivuilla</a></Typography>
     </>
   )
 }
