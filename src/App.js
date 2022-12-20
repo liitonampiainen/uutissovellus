@@ -24,7 +24,8 @@ function App() {
           </Toolbar>
         </AppBar>
         <Routes>
-          <Route path="/" element={<Aloitus />} />
+          <Route index element={<Aloitus />} />
+          <Route path="/uutissovellus" element={<Aloitus />} />
           <Route path="/Uutinen/:indeksi" element={<Uutinen />} />
         </Routes>
       </BrowserRouter>
